@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="am" id="database-shop-1">
+        <sql>
+            CREATE TABLE ADDRESS (
+            addressId INT NOT NULL AUTO_INCREMENT,
+            country VARCHAR(50) NOT NULL,
+            state VARCHAR(50) NOT NULL,
+            city VARCHAR(50) NOT NULL,
+            postalCode VARCHAR(50) NOT NULL,
+            street1 VARCHAR(50) NULL,
+            street2 VARCHAR(50) NULL,
+            PRIMARY KEY (addressId)
+            )
+        </sql>
+    </changeSet>
+    <changeSet author="am" id="database-shop-2">
+        <sql>
+            CREATE TABLE CUSTOMER (
+            customerId INT NOT NULL AUTO_INCREMENT,
+            lastName VARCHAR(50) NOT NULL,
+            firstName VARCHAR(50) NOT NULL,
+            phone VARCHAR(50) NOT NULL,
+            email VARCHAR(50) NOT NULL,
+            addressId INT NULL,
+            PRIMARY KEY (customerId),
+            FOREIGN KEY (`addressid`) REFERENCES `address` (`addressid`) ON DELETE RESTRICT ON UPDATE CASCADE
+            )
+        </sql>
+    </changeSet>
+
+    <!--<changeSet id="" author="am">-->
+    <!--<insert tableName="ADDRESS">-->
+    <!--<column name="addressId" value="1"/>-->
+    <!--<column name="country" value="country"/>-->
+    <!--<column name="state" value="state"/>-->
+    <!--<column name="city" value="city"/>-->
+    <!--<column name="postalCode" value="postalCode"/>-->
+    <!--</insert>-->
+    <!--</changeSet>-->
+</databaseChangeLog>
