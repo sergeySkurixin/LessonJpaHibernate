@@ -3,12 +3,10 @@ package ru.sbt;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
-import org.springframework.test.context.transaction.TransactionConfiguration;
 import ru.sbt.crm.entity.Customer;
-import ru.sbt.dao.CustomerDao;
+import ru.sbt.crm.dao.CustomerDao;
 
 @ContextConfiguration(locations = {"/applicationContext.xml"})
 //@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)

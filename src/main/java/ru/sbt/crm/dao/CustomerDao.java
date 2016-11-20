@@ -1,4 +1,4 @@
-package ru.sbt.dao;
+package ru.sbt.crm.dao;
 
 import ru.sbt.crm.entity.Customer;
 

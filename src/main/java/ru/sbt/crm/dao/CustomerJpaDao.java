@@ -1,4 +1,4 @@
-package ru.sbt.dao;
+package ru.sbt.crm.dao;
 
 import org.springframework.stereotype.Repository;
 import ru.sbt.crm.entity.Customer;
